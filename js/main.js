@@ -27,9 +27,9 @@ $(document).ready(function () {
         $(".nav-toggle").css("color", newColorString);
 
         // Scroll-Spy Effect
-        var sections = $("section"); // Assuming each section has a <section> tag
+        var sections = $("section");
         sections.each(function () {
-            var top = $(this).offset().top - 50; // Adjust offset as needed
+            var top = $(this).offset().top - 50;
             var bottom = top + $(this).outerHeight();
             var id = $(this).attr("id");
             if (scrollTop >= top && scrollTop <= bottom) {
