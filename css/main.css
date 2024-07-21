@@ -33,6 +33,10 @@
     transition: 0.3s all ease;
 }
 
+.nav-toggle.scrolled {
+    color: #d29d61;
+}
+
 @media (max-width: 768px) {
     .nav-toggle span {
         display: none;

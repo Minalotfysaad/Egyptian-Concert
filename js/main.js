@@ -9,22 +9,12 @@ $(document).ready(function () {
         var scrollTop = $(window).scrollTop();
         var homeHeight = $("#home").outerHeight();
         var scrollPercentage = Math.min(scrollTop / homeHeight, 1);
-        var startColor = { r: 255, g: 255, b: 255 }; // White
-        var endColor = { r: 210, g: 157, b: 97 }; // Brown
-        var newColor = {
-            r: Math.round(
-                startColor.r + (endColor.r - startColor.r) * scrollPercentage
-            ),
-            g: Math.round(
-                startColor.g + (endColor.g - startColor.g) * scrollPercentage
-            ),
-            b: Math.round(
-                startColor.b + (endColor.b - startColor.b) * scrollPercentage
-            ),
-        };
-        var newColorString = `rgb(${newColor.r}, ${newColor.g}, ${newColor.b})`;
 
-        $(".nav-toggle").css("color", newColorString);
+        if (scrollPercentage > 0.5) {
+            $(".nav-toggle").addClass("scrolled");
+        } else {
+            $(".nav-toggle").removeClass("scrolled");
+        }
 
         // Scroll-Spy Effect
         var sections = $("section");
