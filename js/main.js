@@ -3,6 +3,7 @@ $(document).ready(function () {
     $(".nav-toggle").click(function () {
         $(".nav-container").animate({ left: 0 }, 500);
     });
+
     // Change color of nav-toggle on scroll
     $(window).on("scroll", function () {
         var scrollTop = $(window).scrollTop();
@@ -24,6 +25,20 @@ $(document).ready(function () {
         var newColorString = `rgb(${newColor.r}, ${newColor.g}, ${newColor.b})`;
 
         $(".nav-toggle").css("color", newColorString);
+
+        // Scroll-Spy Effect
+        var sections = $("section"); // Assuming each section has a <section> tag
+        sections.each(function () {
+            var top = $(this).offset().top - 50; // Adjust offset as needed
+            var bottom = top + $(this).outerHeight();
+            var id = $(this).attr("id");
+            if (scrollTop >= top && scrollTop <= bottom) {
+                $(".nav-list .nav-item").removeClass("active");
+                $(".nav-list .nav-item a[href='#" + id + "']")
+                    .parent()
+                    .addClass("active");
+            }
+        });
     });
 
     // Nav Close Handler
