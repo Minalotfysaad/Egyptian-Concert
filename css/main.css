@@ -33,6 +33,12 @@
     transition: 0.3s all ease;
 }
 
+@media (max-width: 768px) {
+    .nav-toggle span {
+        display: none;
+    }
+}
+
 .nav-toggle:hover {
     cursor: pointer;
     color: #d29d61;
@@ -139,33 +145,39 @@
 
 /* End Counter Section */
 /* Start Contact Section */
-.social-icons li{
-width: 40px;
-height: 40px;
-border: 1px solid #9e9d9d;
-border-radius: 50%;
-display: flex;
-justify-content: center;
-align-items: center;
-cursor: pointer;
-transition: 0.3s all ease;
+.social-icons li {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #9e9d9d;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s all ease;
 }
-.social-icons li:hover{
+
+.social-icons li:hover {
     background-color: #d29d61;
 }
-.social-icons li:hover i{
+
+.social-icons li:hover i {
     color: white;
 }
-.form-control{
+
+.form-control {
     border-radius: 0%;
 }
-.btn{
+
+.btn {
     border-radius: 0%;
     background-color: #d29d61;
     color: white;
 }
-.btn:hover{
+
+.btn:hover {
     background-color: #d29d61;
     color: white;
 }
+
 /* End Contact Section */
